@@ -1,5 +1,3 @@
-// Your Script here.
-
 const lookup = {
   A: "N",
   B: "O",
@@ -35,21 +33,18 @@ function rot13(encodedStr) {
   let decodedArr = []; // Your Result goes here
   // Only change code below this line
 	for (let str of encodedStr) {
-		if(str.includes(lookup[str])){
 			let newStr = lookup[str];
 			decodedArr.push(newStr)
-		}
-		else decodedArr.push(str)
+		  
+		  if(/\s/.test(str)) decodedArr.push(' ');
+		
 		
 	}
 
-	let decodedStr = decodedArr.join(' ');
+	let decodedStr = decodedArr.join('');
   return decodedStr; //return decodedArr
 }
 
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
 
 console.log(rot13("SERR YBIR? NPPVBWBO"));
-
-// Do not change this line
-window.rot13 = rot13;
